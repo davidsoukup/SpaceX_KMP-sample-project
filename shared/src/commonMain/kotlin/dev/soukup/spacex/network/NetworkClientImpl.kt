@@ -1,8 +1,11 @@
 package dev.soukup.spacex.network
 
+import dev.soukup.spacex.network.model.RocketListResp
 import io.ktor.client.HttpClient
+import io.ktor.client.call.body
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.request.get
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
@@ -25,4 +28,27 @@ class NetworkClientImpl: INetworkClient {
         }
     }
 
+
+    /**
+     * Generic GET function.
+     * [path] - endpoint path without the base URL (e.g. "rockets")
+     * [callerName] - name of the calling function (for logging/error context)
+     */
+    private suspend inline fun <reified T> get(
+        path: String,
+        callerName: String
+    ): Result<T> {
+        return try {
+            val response: T = client.get("$url$path").body()
+            Result.success(response)
+        } catch (e: Exception) {
+            println("❌ GET failed in $callerName → $path: ${e.message}")
+            Result.failure(e)
+        }
+    }
+
+
+    override suspend fun getRocketList(): Result<List<RocketListResp>> {
+        return get(path = "rockets", callerName = ::getRocketList.name)
+    }
 }
