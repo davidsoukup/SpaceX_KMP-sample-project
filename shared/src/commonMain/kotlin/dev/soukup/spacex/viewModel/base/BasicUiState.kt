@@ -1,4 +1,4 @@
-package dev.soukup.spacex.viewModel
+package dev.soukup.spacex.viewModel.base
 
 import dev.soukup.spacex.utils.UUIDGenerator
 
