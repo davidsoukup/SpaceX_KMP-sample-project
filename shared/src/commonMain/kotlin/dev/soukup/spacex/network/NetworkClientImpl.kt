@@ -1,5 +1,6 @@
 package dev.soukup.spacex.network
 
+import dev.soukup.spacex.model.RocketListModel
 import dev.soukup.spacex.network.model.RocketListResp
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -7,7 +8,11 @@ import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.get
 import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
+import io.ktor.client.call.*
+import io.ktor.client.request.*
+import kotlinx.serialization.Serializable
 
 class NetworkClientImpl: INetworkClient {
 

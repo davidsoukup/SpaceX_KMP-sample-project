@@ -1,11 +1,12 @@
 package dev.soukup.spacex.repository
 
 import dev.soukup.spacex.model.RocketListModel
+import dev.soukup.spacex.network.INetworkClient
 import dev.soukup.spacex.network.NetworkClientImpl
 import dev.soukup.spacex.network.model.toModel
 
 class RocketListRepositoryImpl(
-    private val networkClient: NetworkClientImpl
+    private val networkClient: INetworkClient
 ): IRocketListRepository {
 
     override suspend fun getRocketList(): Result<List<RocketListModel>> {
