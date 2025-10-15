@@ -24,38 +24,3 @@ struct RocketListView: View {
         .navigationTitle("Rockets")
     }
 }
-
-struct RocketListSuccessView: View {
-    var rockets: [RocketListModel]
-    
-    var body: some View {
-        List(rockets, id: \.self.id) { rocket in
-            NavigationLink(value: AppRoute.rocketDetail) {
-                RocketRow(rocket: rocket)
-            }
-        }
-        .navigationTitle("Rockets")
-    }
-}
-
-struct RocketRow: View {
-    var rocket: RocketListModel
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "paperplane.fill")
-                .resizable()
-                .frame(width: 36, height: 36)
-                .foregroundStyle(rocket.active ? Color.pink : Color.gray)
-            VStack(alignment: .leading) {
-                Text(rocket.name)
-                    .font(.system(size: 24, weight: .bold))
-                Text("First flight: \(rocket.firstFlight)")
-                    .font(.system(size: 12, weight: .medium))
-            }
-            
-            
-            Spacer()
-        }
-    }
-}
