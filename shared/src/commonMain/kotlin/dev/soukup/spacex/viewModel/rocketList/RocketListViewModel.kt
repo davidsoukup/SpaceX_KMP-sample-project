@@ -1,7 +1,7 @@
 package dev.soukup.spacex.viewModel.rocketList
 
 import androidx.lifecycle.viewModelScope
-import dev.soukup.spacex.useCase.rocketList.GetRocketListUseCase
+import dev.soukup.spacex.usecase.rocketList.GetRocketListUseCase
 import dev.soukup.spacex.viewModel.base.BaseViewModel
 import dev.soukup.spacex.viewModel.base.BasicUiState
 import kotlinx.coroutines.launch

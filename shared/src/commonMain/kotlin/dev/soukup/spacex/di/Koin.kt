@@ -4,7 +4,8 @@ import dev.soukup.spacex.network.INetworkClient
 import dev.soukup.spacex.network.NetworkClientImpl
 import dev.soukup.spacex.repository.IRocketListRepository
 import dev.soukup.spacex.repository.RocketListRepositoryImpl
-import dev.soukup.spacex.useCase.rocketList.GetRocketListUseCase
+import dev.soukup.spacex.usecase.rocketDetail.GetRocketDetailUseCase
+import dev.soukup.spacex.usecase.rocketList.GetRocketListUseCase
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -14,7 +15,7 @@ fun initKoin(){
         modules(
             client,
             repositoryModule,
-            rocketListUseCaseModule
+            rocketUseCaseModule
         )
     }
 }
@@ -27,6 +28,7 @@ val repositoryModule = module {
     single<IRocketListRepository> { RocketListRepositoryImpl(get()) }
 }
 
-val rocketListUseCaseModule = module {
+val rocketUseCaseModule = module {
     factory { GetRocketListUseCase(get()) }
+    factory { GetRocketDetailUseCase(get()) }
 }

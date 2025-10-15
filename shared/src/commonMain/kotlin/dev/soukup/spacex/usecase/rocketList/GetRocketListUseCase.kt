@@ -1,4 +1,4 @@
-package dev.soukup.spacex.useCase.rocketList
+package dev.soukup.spacex.usecase.rocketList
 
 import dev.soukup.spacex.model.RocketListModel
 import dev.soukup.spacex.repository.IRocketListRepository
