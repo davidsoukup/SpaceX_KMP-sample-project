@@ -10,6 +10,9 @@ data class WeightModel(
     val kilogramsFormatted: String
         get() = "$kg m"
 
+    val tonsFormatted: String
+        get() = "${kg / 1000} t"
+
     val poundsFormatted: String
         get() = "$lb ft"
 }
