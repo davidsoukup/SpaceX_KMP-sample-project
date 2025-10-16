@@ -25,7 +25,10 @@ struct RocketDetailView: View {
                 if let rocketDetail = success.data as? RocketDetailModel {
                     RocketDetailSuccessView(rocketDetail: rocketDetail)
                 }
-            default: Text("default")
+            case is BasicUiStateLoading:
+                Text("Loading")
+            default:
+                Text("Error")
             }
         }
         .navigationTitle(rocketName)

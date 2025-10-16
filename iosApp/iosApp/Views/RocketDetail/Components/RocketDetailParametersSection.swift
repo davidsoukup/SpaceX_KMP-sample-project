@@ -1,0 +1,141 @@
+//
+//  RocketDetailParametersSection.swift
+//  iosApp
+//
+//  Created by David Soukup on 16.10.2025.
+//
+
+import Shared
+import SwiftUI
+
+struct RocketDetailParametersSection: View {
+    var heightFormatted: String
+    var diameterFormatted: String
+    var massFormatted: String
+    var stages: [RocketStageModel]
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: Spacing.medium) {
+            Text("Parameters")
+                .modifier(Title2Bold(color: Color.black))
+            
+            HStack {
+                RocketDetailParameterCard(
+                    title: "Height",
+                    value: heightFormatted
+                )
+                Spacer()
+                
+                RocketDetailParameterCard(
+                    title: "Diameter",
+                    value: diameterFormatted
+                )
+                
+                Spacer()
+                
+                RocketDetailParameterCard(
+                    title: "Mass",
+                    value: massFormatted
+                )
+            }
+            
+            ForEach(Array(stages.enumerated()), id: \.offset) { index, stage in
+                VStack(alignment: .leading, spacing: Spacing.small) {
+                    RocketDetailStageCard(
+                        stage: stage,
+                        stageIndex: index
+                    )
+                }
+            }
+        }
+    }
+}
+
+private struct RocketDetailParameterCard: View {
+    var title: String
+    var value: String
+    
+    var body: some View {
+        VStack(spacing: Spacing.xSmall) {
+            
+            Text(value)
+                .modifier(Title2Bold(color: Color.white))
+                .lineLimit(1)
+            
+            Text(title)
+                .modifier(Subheadline(color: Color.white))
+                .lineLimit(1)
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(Color.purple)
+        .cornerRadius(12)
+    }
+}
+
+private struct RocketDetailStageCard: View {
+    var stage: RocketStageModel
+    var stageIndex: Int
+    
+    private func stageTitle(stageIndex: Int) -> String {
+        switch stageIndex {
+        case 0: return "First stage"
+        case 1: return "Second stage"
+        case 2: return "Third stage"
+        default: return "Stage \(stageIndex + 1)"
+        }
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: Spacing.medium) {
+            Text(stageTitle(stageIndex: stageIndex))
+                .modifier(Title2Bold(color: Color.black))
+            
+            RocketDetailStageInfoRow(
+                icon: "repeat",
+                text: stage.reusable ? "Reusable" : "Not reusable"
+            )
+            
+            RocketDetailStageInfoRow(
+                icon: "engine.combustion.fill",
+                text: "\(stage.engines) engines"
+            )
+            
+            RocketDetailStageInfoRow(
+                icon: "fuelpump.fill",
+                text: "\(stage.fuelAmountTons) tons of fuel"
+            )
+            
+            RocketDetailStageInfoRow(
+                icon: "flame.fill",
+                text: "\(stage.burnTimeSec) seconds burn time"
+            )
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(Color.black.opacity(0.05))
+        .cornerRadius(12)
+    }
+}
+
+private struct RocketDetailStageInfoRow: View {
+    var icon: String
+    var text: String
+    
+    var body: some View {
+        HStack(spacing: Spacing.small) {
+            Image(systemName: icon)
+                .resizable()
+                .scaledToFit()
+                .frame(height: 16)
+                .foregroundStyle(Color.purple)
+            
+            Text(text)
+                .modifier(BodyRegular(color: Color.black))
+            
+            Spacer()
+        }
+    }
+}
+
+

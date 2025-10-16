@@ -12,6 +12,26 @@ struct RocketDetailSuccessView: View {
     var rocketDetail: RocketDetailModel
     
     var body: some View {
-        Text(rocketDetail.name)
+        ScrollView {
+            VStack(alignment: .leading, spacing: Spacing.medium) {
+                RocketDetailDesriptionSection(
+                    description: rocketDetail.description_
+                )
+                
+                RocketDetailParametersSection(
+                    heightFormatted: rocketDetail.height.metersFormated,
+                    diameterFormatted: rocketDetail.diameter.metersFormated,
+                    massFormatted: rocketDetail.mass.tonsFormatted,
+                    stages: rocketDetail.stages
+                )
+                
+                RocketDetailPhotosSection(
+                    photosUrl: rocketDetail.images
+                )
+            }
+            .padding(.vertical, Spacing.Screen.vertical)
+            .padding(.horizontal, Spacing.Screen.horizontal)
+        }
     }
 }
+

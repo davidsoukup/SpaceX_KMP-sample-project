@@ -28,7 +28,7 @@ struct RocketRow: View {
         HStack(spacing: 12) {
             Image(systemName: "paperplane.fill")
                 .resizable()
-                .frame(width: 36, height: 36)
+                .frame(width: 28, height: 28)
                 .foregroundStyle(rocket.active ? Color.pink : Color.gray)
             VStack(alignment: .leading) {
                 Text(rocket.name)
