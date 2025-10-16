@@ -25,4 +25,5 @@ final class NavigationController: ObservableObject {
 enum AppRoute: Hashable, Codable {
     case rocketList
     case rocketDetail(rocketId: String, rocketName: String)
+    case rocketLaunch
 }

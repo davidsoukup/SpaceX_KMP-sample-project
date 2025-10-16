@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RocketDetailView: View {
     @StateObject private var viewModel: RocketDetailVM
+    @EnvironmentObject private var navigationController: NavigationController
     
     var rocketName: String
     
@@ -36,7 +37,7 @@ struct RocketDetailView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Launch") {
-
+                    navigationController.navigate(to: .rocketLaunch)
                 }
             }
         }
