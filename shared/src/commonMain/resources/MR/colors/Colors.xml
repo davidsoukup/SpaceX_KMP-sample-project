@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- format: #RRGGBB[AA] or 0xRRGGBB[AA] or RRGGBB[AA] where [AA] - optional -->
+    <!-- WHITE: -->
+    <color name="WHITE">#FFFFFF</color>
+    <color name="WHITE_75">#FFFFFFBF</color>
+    <color name="WHITE_65">#FFFFFFA6</color>
+    <color name="WHITE_50">#FFFFFF80</color>
+    <color name="WHITE_25">#FFFFFF40</color>
+    <!-- BLACK: -->
+    <color name="BLACK">#18181B</color>
+    <!-- Gray: -->
+    <color name="GRAY_50">#F9FAFB</color>
+    <color name="GRAY_100">#F3F4F6</color>
+    <color name="GRAY_200">#E5E7EB</color>
+    <color name="GRAY_300">#D1D5D8</color>
+    <color name="GRAY_400">#9CA3AF</color>
+    <color name="GRAY_500">#6B7280</color>
+    <color name="GRAY_600">#4B5563</color>
+    <color name="GRAY_700">#374151</color>
+    <color name="GRAY_800">#1F2937</color>
+    <color name="GRAY_900">#111827</color>
+    <!-- Zinc: -->
+    <color name="ZINC_50">#FAFAFA</color>
+    <color name="ZINC_100">#F4F4F5</color>
+    <color name="ZINC_200">#E4E4E7</color>
+    <color name="ZINC_300">#D4D4D8</color>
+    <color name="ZINC_400">#A1A1AA</color>
+    <color name="ZINC_500">#71717A</color>
+    <color name="ZINC_600">#52525B</color>
+    <color name="ZINC_700">#3F3F46</color>
+    <color name="ZINC_800">#27272A</color>
+    <color name="ZINC_900">#18181B</color>
+    <!-- NEBULA: -->
+    <color name="NEBULA_50">#F6F2FF</color>
+    <color name="NEBULA_100">#E9E2FD</color>
+    <color name="NEBULA_200">#C9B7F9</color>
+    <color name="NEBULA_300">#A98DF6</color>
+    <color name="NEBULA_400">#8962F2</color>
+    <color name="NEBULA_500">#6938EF</color>
+    <color name="NEBULA_600">#4812DD</color>
+    <color name="NEBULA_700">#370EA9</color>
+    <color name="NEBULA_800">#25196A</color>
+    <color name="NEBULA_900">#150541</color>
+    <!-- BLUE: -->
+    <color name="BLUE_50">#EFF8FF</color>
+    <color name="BLUE_100">#D1E9FF</color>
+    <color name="BLUE_200">#B2DDFF</color>
+    <color name="BLUE_300">#84CAFF</color>
+    <color name="BLUE_400">#53B1FD</color>
+    <color name="BLUE_500">#2E90FA</color>
+    <color name="BLUE_600">#1570EF</color>
+    <color name="BLUE_700">#175CD3</color>
+    <color name="BLUE_800">#1849A9</color>
+    <color name="BLUE_900">#194185</color>
+    <!-- GREEN: -->
+    <color name="GREEN_50">#F6FFFA</color>
+    <color name="GREEN_100">#D1FADF</color>
+    <color name="GREEN_200">#A6F4C5</color>
+    <color name="GREEN_300">#6CE9A6</color>
+    <color name="GREEN_400">#32D583</color>
+    <color name="GREEN_500">#12B76A</color>
+    <color name="GREEN_600">#039855</color>
+    <color name="GREEN_700">#027A48</color>
+    <color name="GREEN_800">#05603A</color>
+    <color name="GREEN_900">#054F31</color>
+    <color name="FOREST_GREEN">#26BE00</color>
+    <!-- PINK: -->
+    <color name="PINK_50">#FDF2FA</color>
+    <color name="PINK_100">#FCE7F6</color>
+    <color name="PINK_200">#FCCEEE</color>
+    <color name="PINK_300">#FAA7E0</color>
+    <color name="PINK_400">#F670C7</color>
+    <color name="PINK_500">#EE46BC</color>
+    <color name="PINK_600">#DD2590</color>
+    <color name="PINK_700">#C11574</color>
+    <color name="PINK_800">#9E165F</color>
+    <color name="PINK_900">#851651</color>
+    <!-- RED: -->
+    <color name="RED_50">#FFF8F8</color>
+    <color name="RED_100">#FEE4E2</color>
+    <color name="RED_200">#FECDCA</color>
+    <color name="RED_300">#FDA29B</color>
+    <color name="RED_400">#F97066</color>
+    <color name="RED_500">#F04438</color>
+    <color name="RED_600">#D92D20</color>
+    <color name="RED_700">#B42318</color>
+    <color name="RED_800">#912018</color>
+    <color name="RED_900">#7A271A</color>
+    <!-- ORANGE: -->
+    <color name="ORANGE_50">#FFF6ED</color>
+    <color name="ORANGE_100">#FFEAD5</color>
+    <color name="ORANGE_200">#FDDCAB</color>
+    <color name="ORANGE_300">#FEB273</color>
+    <color name="ORANGE_400">#FD853A</color>
+    <color name="ORANGE_500">#FB6514</color>
+    <color name="ORANGE_600">#EC4A0A</color>
+    <color name="ORANGE_700">#C4320A</color>
+    <color name="ORANGE_800">#9C2A10</color>
+    <color name="ORANGE_900">#7E2410</color>
+    <!-- YELLOW: -->
+    <color name="YELLOW_50">#FFFCF4</color>
+    <color name="YELLOW_100">#FEF0C7</color>
+    <color name="YELLOW_200">#FEDF89</color>€
+    <color name="YELLOW_300">#FEC84B</color>
+    <color name="YELLOW_400">#FDB022</color>
+    <color name="YELLOW_500">#F79009</color>
+    <color name="YELLOW_600">#DC6803</color>
+    <color name="YELLOW_700">#B54708</color>
+    <color name="YELLOW_800">#93370D</color>
+    <color name="YELLOW_900">#7A2E0E</color>
+</resources>
