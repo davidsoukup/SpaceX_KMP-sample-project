@@ -34,10 +34,6 @@ sealed interface BasicUiState<out T> {
         val data: Any? = null // Any additional data needed in loading
     ) : BasicUiState<Nothing>
 
-    data object Empty: BasicUiState<Nothing>
-
-    data object Idle: BasicUiState<Nothing>
-
     val isLoading: Boolean
         get() = this is Loading
 
