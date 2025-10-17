@@ -10,7 +10,7 @@ import kotlin.getValue
 
 open class RocketDetailViewModel(
     val rocketId: String
-): BaseViewModel<RocketDetailContract.Event, RocketDetailContract.State, RocketDetailContract.Effect>() {
+): BaseViewModel<RocketDetailContract.Event, RocketDetailContract.State>() {
 
     private val getRocketDetailUseCase: GetRocketDetailUseCase by inject()
 

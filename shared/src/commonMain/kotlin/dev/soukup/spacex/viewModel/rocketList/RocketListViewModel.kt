@@ -7,7 +7,7 @@ import dev.soukup.spacex.viewModel.base.BasicUiState
 import kotlinx.coroutines.launch
 import org.koin.core.component.inject
 
-open class RocketListViewModel: BaseViewModel<RocketListContract.Event, RocketListContract.State, RocketListContract.Effect>() {
+open class RocketListViewModel: BaseViewModel<RocketListContract.Event, RocketListContract.State>() {
 
     private val getRocketListUseCase: GetRocketListUseCase by inject()
 
