@@ -1,39 +1,23 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# KMP Sample project & playground
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+This repository contains a personal Kotlin Multiplatform (KMP) project, created as a demo and playground for my own learning and experimentation. It demonstrates a basic setup for sharing code between Android and iOS, showcasing how to structure a multiplatform project, implement shared business logic, and integrate platform-specific features. This project serves as a hands-on environment to explore KMP concepts, test ideas, and refine my understanding of Kotlin Multiplatform development.
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-* [/shared](./shared/src) is for the code that will be shared between all targets in the project.
-  The most important subfolder is [commonMain](./shared/src/commonMain/kotlin). If preferred, you
-  can add code to the platform-specific folders here too.
+## 🔨 Tech stack
 
-### Build and Run Android Application
+- Ktor
+- Koin
+- Coroutines
+- Moko Resources (<em>not implemented yet</em>)
+- SQLDelight (<em>not implemented yet</em>)
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+## 🚀 Features
 
-### Build and Run iOS Application
+- Rocket listing (<em>now only on iOS</em>)
+- Rocket detail (<em>now only on iOS</em>)
+- Rocket launch screen usin accelerometer (<em>now only on iOS</em>)
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
 
----
+## 🌐 Another resources
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+- SpaceX Data API V4

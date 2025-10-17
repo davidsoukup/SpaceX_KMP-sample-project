@@ -92,22 +92,22 @@ private struct RocketDetailStageCard: View {
                 .modifier(Title2Bold(color: Color.text))
             
             RocketDetailStageInfoRow(
-                icon: "repeat",
+                icon: "Reusable",
                 text: stage.reusable ? "Reusable" : "Not reusable"
             )
             
             RocketDetailStageInfoRow(
-                icon: "engine.combustion.fill",
+                icon: "Engine",
                 text: "\(stage.engines) engines"
             )
             
             RocketDetailStageInfoRow(
-                icon: "fuelpump.fill",
+                icon: "Fuel",
                 text: "\(stage.fuelAmountTons) tons of fuel"
             )
             
             RocketDetailStageInfoRow(
-                icon: "flame.fill",
+                icon: "Burn",
                 text: "\(stage.burnTimeSec) seconds burn time"
             )
         }
@@ -124,11 +124,10 @@ private struct RocketDetailStageInfoRow: View {
     
     var body: some View {
         HStack(spacing: Spacing.small) {
-            Image(systemName: icon)
+            Image(icon)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 16)
-                .foregroundStyle(Color.purple)
             
             Text(text)
                 .modifier(BodyRegular(color: Color.text))

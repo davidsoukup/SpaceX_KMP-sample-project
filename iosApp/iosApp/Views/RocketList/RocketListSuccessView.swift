@@ -26,17 +26,17 @@ struct RocketRow: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            Image(systemName: "paperplane.fill")
+            Image("Rocket")
                 .resizable()
-                .frame(width: 28, height: 28)
+                .frame(width: 24, height: 24)
                 .foregroundStyle(rocket.active ? Color.pink : Color.gray)
+            
             VStack(alignment: .leading) {
                 Text(rocket.name)
-                    .font(.system(size: 24, weight: .bold))
+                    .modifier(Title2Bold(color: Color.text))
                 Text("First flight: \(rocket.firstFlight)")
-                    .font(.system(size: 12, weight: .medium))
+                    .modifier(FootnoteRegular(color: Color.text))
             }
-            
             
             Spacer()
         }
