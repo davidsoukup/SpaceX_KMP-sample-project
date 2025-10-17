@@ -1,5 +1,6 @@
 package dev.soukup.spacex.model.general
 
+import dev.soukup.spacex.utils.SharedNumberFormatter
 import kotlinx.serialization.Serializable
 
 data class DimensionModel(
@@ -7,8 +8,8 @@ data class DimensionModel(
     val feet: Double
 ) {
     val metersFormated: String
-        get() = "$meters m"
+        get() = "${SharedNumberFormatter.maxTwoDecimals(meters)} m"
 
     val feetFormatted: String
-        get() = "$feet ft"
+        get() = "${SharedNumberFormatter.maxTwoDecimals(feet)} ft"
 }
