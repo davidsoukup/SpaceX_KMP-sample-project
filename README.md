@@ -43,13 +43,22 @@ This project follows a Kotlin Multiplatform Clean Architecture, sharing ViewMode
 
 #### Android not implemented yet
 
-## ✨Future features
+## ✨ Future features
 
 - Moko Resource for shared resources (translations, colors, images)
 - SQLDelight for data persistence
 - Android app
 
-##Future features
+## 🏃 Run app
+
+#### iOS
+
+To run the application on iPhone device/simulator:
+
+- Open iosApp/iosApp.xcworkspace in Xcode and run standard configuration
+
+- Or use Kotlin Multiplatform Mobile plugin for Android Studio
+
 
 ## 🌐 Another resources
 
