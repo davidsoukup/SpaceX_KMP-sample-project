@@ -27,7 +27,7 @@ data class RocketStageModel(
     val reusable: Boolean,
     val engines: Int,
     val fuelAmountTons: Double,
-    val burnTimeSec: Int
+    val burnTimeSec: Int?
 )
 
 data class RocketPayloadModel(

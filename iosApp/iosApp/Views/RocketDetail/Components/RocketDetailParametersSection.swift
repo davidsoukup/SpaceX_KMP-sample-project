@@ -103,13 +103,15 @@ private struct RocketDetailStageCard: View {
             
             RocketDetailStageInfoRow(
                 icon: "Fuel",
-                text: "\(stage.fuelAmountTons) tons of fuel"
+                text: "\(SharedNumberFormatter().maxTwoDecimals(double: stage.fuelAmountTons)) tons of fuel"
             )
             
-            RocketDetailStageInfoRow(
-                icon: "Burn",
-                text: "\(stage.burnTimeSec) seconds burn time"
-            )
+            if let burnTimeSec = stage.burnTimeSec {
+                RocketDetailStageInfoRow(
+                    icon: "Burn",
+                    text: "\(burnTimeSec) seconds burn time"
+                )
+            }
         }
         .frame(maxWidth: .infinity)
         .padding()

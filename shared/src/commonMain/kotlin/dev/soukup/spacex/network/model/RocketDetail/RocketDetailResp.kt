@@ -46,7 +46,7 @@ data class RocketDetailStageResp(
     val reusable: Boolean,
     val engines: Int,
     val fuel_amount_tons: Double,
-    val burn_time_sec: Int
+    val burn_time_sec: Int? = null
 )
 
 @Serializable
