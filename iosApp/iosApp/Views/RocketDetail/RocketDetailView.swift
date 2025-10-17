@@ -27,7 +27,7 @@ struct RocketDetailView: View {
                     RocketDetailSuccessView(rocketDetail: rocketDetail)
                 }
             case is BasicUiStateLoading:
-                Text("Loading")
+                LoadingStateView()
             default:
                 Text("Error")
             }

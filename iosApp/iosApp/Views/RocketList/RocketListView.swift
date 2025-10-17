@@ -18,7 +18,9 @@ struct RocketListView: View {
                 if let rocketList = success.data as? [RocketListModel] {
                     RocketListSuccessView(rockets: rocketList)
                 }
-            default: Text("default")
+            case is BasicUiStateLoading:
+                LoadingStateView()
+            default: Text("Error")
             }
         }
         .navigationTitle("Rockets")
