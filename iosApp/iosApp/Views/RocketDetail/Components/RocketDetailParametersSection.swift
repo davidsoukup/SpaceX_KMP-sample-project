@@ -17,7 +17,7 @@ struct RocketDetailParametersSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.medium) {
             Text("Parameters")
-                .modifier(Title2Bold(color: Color.black))
+                .modifier(Title2Bold(color: Color.text))
             
             HStack {
                 RocketDetailParameterCard(
@@ -89,7 +89,7 @@ private struct RocketDetailStageCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.medium) {
             Text(stageTitle(stageIndex: stageIndex))
-                .modifier(Title2Bold(color: Color.black))
+                .modifier(Title2Bold(color: Color.text))
             
             RocketDetailStageInfoRow(
                 icon: "repeat",
@@ -113,7 +113,7 @@ private struct RocketDetailStageCard: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.black.opacity(0.05))
+        .background(Color.text.opacity(0.05))
         .cornerRadius(12)
     }
 }
@@ -131,7 +131,7 @@ private struct RocketDetailStageInfoRow: View {
                 .foregroundStyle(Color.purple)
             
             Text(text)
-                .modifier(BodyRegular(color: Color.black))
+                .modifier(BodyRegular(color: Color.text))
             
             Spacer()
         }

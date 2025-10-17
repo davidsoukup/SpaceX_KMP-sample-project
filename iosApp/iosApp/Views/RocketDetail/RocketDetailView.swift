@@ -37,7 +37,7 @@ struct RocketDetailView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Launch") {
-                    navigationController.navigate(to: .rocketLaunch)
+                    navigationController.navigate(to: .rocketLaunch(rocketName: rocketName))
                 }
             }
         }

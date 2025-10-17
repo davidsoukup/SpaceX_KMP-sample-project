@@ -13,10 +13,10 @@ struct RocketDetailDesriptionSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.small) {
             Text("Overview")
-                .modifier(Title2Bold(color: Color.black))
+                .modifier(Title2Bold(color: Color.text))
             
             Text(description)
-                .modifier(BodyRegular(color: Color.black))
+                .modifier(BodyRegular(color: Color.text))
         }
     }
 }

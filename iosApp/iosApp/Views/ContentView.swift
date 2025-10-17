@@ -12,8 +12,8 @@ struct ContentView: View {
                         RocketListView()
                     case .rocketDetail(let rocketId, let rocketName):
                         RocketDetailView(rocketId: rocketId, rocketName: rocketName)
-                    case .rocketLaunch:
-                        RocketLaunchView()
+                    case .rocketLaunch(let rocketName):
+                        RocketLaunchView(rocketName: rocketName)
                     }
                 }
         }

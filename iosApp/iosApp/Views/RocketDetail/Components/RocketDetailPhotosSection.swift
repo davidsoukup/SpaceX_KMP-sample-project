@@ -14,7 +14,7 @@ struct RocketDetailPhotosSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Spacing.medium) {
             Text("Photos")
-                .modifier(Title2Bold(color: Color.black))
+                .modifier(Title2Bold(color: Color.text))
             
             ForEach(photosUrl.prefix(maxVisiblePhotos), id: \.self) { photoUrl in
                 if let url = URL(string: photoUrl) {
