@@ -49,6 +49,8 @@ This project follows a Kotlin Multiplatform Clean Architecture, sharing ViewMode
 - SQLDelight for data persistence
 - Android app
 
+##Future features
+
 ## 🌐 Another resources
 
 - SpaceX Data API V4
