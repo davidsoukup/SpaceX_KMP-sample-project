@@ -24,3 +24,9 @@ class RocketDetailVM: RocketDetailViewModel, ObservableObject {
         }
     }
 }
+
+extension RocketDetailVM {
+    func tryAgain() {
+        self.setEvent(event: RocketDetailContractEventTryAgain())
+    }
+}

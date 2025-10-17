@@ -8,8 +8,9 @@ import dev.soukup.spacex.viewModel.base.UiState
 interface RocketListContract {
 
     sealed interface Event: UiEvent {
-
+        data object TryAgain: Event
     }
+
     data class State(
         val rocketListState: BasicUiState<List<RocketListModel>>
     ): UiState {

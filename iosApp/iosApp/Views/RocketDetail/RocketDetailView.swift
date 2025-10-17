@@ -29,7 +29,12 @@ struct RocketDetailView: View {
             case is BasicUiStateLoading:
                 LoadingStateView()
             default:
-                Text("Error")
+                ErrorStateView(
+                    onTryAgain: {
+                        viewModel.tryAgain()
+                    }
+                )
+                .padding(.horizontal, Spacing.medium)
             }
         }
         .navigationTitle(rocketName)

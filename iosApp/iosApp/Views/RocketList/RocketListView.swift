@@ -20,7 +20,13 @@ struct RocketListView: View {
                 }
             case is BasicUiStateLoading:
                 LoadingStateView()
-            default: Text("Error")
+            default:
+                ErrorStateView(
+                    onTryAgain: {
+                        viewModel.tryAgain()
+                    }
+                )
+                .padding(.horizontal, Spacing.medium)
             }
         }
         .navigationTitle("Rockets")

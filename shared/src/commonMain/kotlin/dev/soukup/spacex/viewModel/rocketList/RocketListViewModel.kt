@@ -14,7 +14,12 @@ open class RocketListViewModel: BaseViewModel<RocketListContract.Event, RocketLi
     override fun createInitialState(): RocketListContract.State = RocketListContract.State.initialState
 
     override suspend fun handleEvent(event: RocketListContract.Event) {
-
+        when (event) {
+            is RocketListContract.Event.TryAgain -> {
+                setState { copy(rocketListState = BasicUiState.Loading()) }
+                loadRocketListData()
+            }
+        }
     }
 
     init {

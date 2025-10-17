@@ -7,7 +7,9 @@ import dev.soukup.spacex.viewModel.base.UiState
 
 interface RocketDetailContract {
 
-    sealed interface Event: UiEvent { }
+    sealed interface Event: UiEvent {
+        data object TryAgain: Event
+    }
 
     data class State(
         val rocketDetailState: BasicUiState<RocketDetailModel>

@@ -17,7 +17,12 @@ open class RocketDetailViewModel(
     override fun createInitialState(): RocketDetailContract.State = RocketDetailContract.State.initialState
 
     override suspend fun handleEvent(event: RocketDetailContract.Event) {
-
+        when (event) {
+            is RocketDetailContract.Event.TryAgain -> {
+                setState { copy(rocketDetailState = BasicUiState.Loading()) }
+                loadRocketDetail()
+            }
+        }
     }
 
     init {

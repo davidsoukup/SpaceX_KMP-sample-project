@@ -24,3 +24,9 @@ class RocketListVM: RocketListViewModel, ObservableObject {
         }
     }
 }
+
+extension RocketListVM {
+    func tryAgain() {
+        self.setEvent(event: RocketListContractEventTryAgain())
+    }
+}
