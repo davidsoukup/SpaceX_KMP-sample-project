@@ -25,14 +25,24 @@ struct RocketLaunchView: View {
                 .frame(width: 140)
                 .offset(y: rocketOffset)
             
-            Button("button") {
-                launchRocket()
+            #if targetEnvironment(simulator)
+            VStack(spacing: Spacing.medium) {
+                Text(isFlying ? "Launch successfull 🚀" : "Tap on button to launch the rocket 🆙")
+                    .modifier(BodyBold(color: Color.text))
+                
+                Button("Launch rocket") {
+                    launchRocket()
+                }
+                .buttonStyle(.bordered)
+                .disabled(isFlying)
             }
-            
+            #else
             Text(isFlying ? "Launch successfull 🚀" : "Move your phone up to launch the rocket 🆙")
-                .foregroundColor(Color.text)
+                .modifier(BodyBold(color: Color.text))
+            #endif
+
         }
-        .padding(.bottom, 120)
+        .padding(.bottom, 60)
         .onAppear {
             motionManager.startMonitoring { launched in
                 if launched {
