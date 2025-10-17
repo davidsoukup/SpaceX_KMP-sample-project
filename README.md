@@ -19,7 +19,7 @@ This repository contains a personal Kotlin Multiplatform (KMP) project, created 
 
 This project follows a Kotlin Multiplatform Clean Architecture, sharing ViewModels, use cases, and data logic across Android (Jetpack Compose) and iOS (SwiftUI) using Ktor, Koin, Coroutines, and Skie for seamless cross-platform integration.
 
-![Architecture diagram](https://i.ibb.co/rRk4n6xZ/Untitled.png)
+![Architecture diagram](https://i.ibb.co/WW3MdTnk/Untitled.png)
 
 
 ## 🚀 Current features
