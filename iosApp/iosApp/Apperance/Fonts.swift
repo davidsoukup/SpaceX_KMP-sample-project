@@ -106,6 +106,15 @@ struct CalloutBold: ViewModifier {
     }
 }
 
+struct CalloutMedium: ViewModifier {
+    var color: Color
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 16, weight: .medium))
+            .foregroundColor(color)
+    }
+}
+
 struct CalloutRegular: ViewModifier {
     var color: Color
     func body(content: Content) -> some View {

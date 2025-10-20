@@ -115,7 +115,7 @@ private struct RocketDetailStageCard: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color.text.opacity(0.05))
+        .background(Color.backgroundItem)
         .cornerRadius(12)
     }
 }

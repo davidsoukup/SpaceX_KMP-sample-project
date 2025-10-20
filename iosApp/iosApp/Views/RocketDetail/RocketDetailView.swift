@@ -20,7 +20,7 @@ struct RocketDetailView: View {
     }
     
     var body: some View {
-        VStack {
+        Group {
             switch viewModel.state.rocketDetailState {
             case let success as BasicUiStateSuccess<NSObject>:
                 if let rocketDetail = success.data as? RocketDetailModel {
