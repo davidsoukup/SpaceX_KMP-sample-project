@@ -18,10 +18,8 @@ open class RocketDetailViewModel(
 
     override suspend fun handleEvent(event: RocketDetailContract.Event) {
         when (event) {
-            is RocketDetailContract.Event.TryAgain -> {
-                setState { copy(rocketDetailState = BasicUiState.Loading()) }
-                loadRocketDetail()
-            }
+            is RocketDetailContract.Event.TryAgain -> tryAgain()
+            is RocketDetailContract.Event.Refresh -> refresh()
         }
     }
 
@@ -38,6 +36,22 @@ open class RocketDetailViewModel(
             }
             .onFailure { error ->
                 setState { copy(rocketDetailState = BasicUiState.Error(error))}
+            }
+    }
+
+    private suspend fun tryAgain() {
+        setState { copy(rocketDetailState = BasicUiState.Loading()) }
+        loadRocketDetail()
+    }
+
+    private suspend fun refresh() {
+        getRocketDetailUseCase.invoke(rocketId)
+            .onSuccess { rocketListData ->
+                setState { copy(rocketDetailState = BasicUiState.Success(rocketListData))}
+                setEffect { RocketDetailContract.Effect.DetailRefreshed }
+            }
+            .onFailure { error ->
+                setEffect { RocketDetailContract.Effect.DetailRefreshFailed }
             }
     }
 }

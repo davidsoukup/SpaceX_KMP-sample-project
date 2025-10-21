@@ -15,10 +15,8 @@ open class RocketListViewModel: BaseViewModel<RocketListContract.Event, RocketLi
 
     override suspend fun handleEvent(event: RocketListContract.Event) {
         when (event) {
-            is RocketListContract.Event.TryAgain -> {
-                setState { copy(rocketListState = BasicUiState.Loading()) }
-                loadRocketListData()
-            }
+            is RocketListContract.Event.TryAgain -> tryAgain()
+            is RocketListContract.Event.Refresh -> refresh()
         }
     }
 
@@ -28,13 +26,33 @@ open class RocketListViewModel: BaseViewModel<RocketListContract.Event, RocketLi
         }
     }
 
-    private suspend fun loadRocketListData() {
+    private suspend fun loadRocketListData(setError: Boolean = true) {
         getRocketListUseCase.invoke()
             .onSuccess { rocketListData ->
                 setState { copy(rocketListState = BasicUiState.Success(rocketListData))}
             }
             .onFailure { error ->
-                setState { copy(rocketListState = BasicUiState.Error(error))}
+                if (setError) {
+                    setState { copy(rocketListState = BasicUiState.Error(error))}
+
+                }
+            }
+    }
+
+    private suspend fun tryAgain() {
+        setState { copy(rocketListState = BasicUiState.Loading()) }
+        loadRocketListData()
+    }
+
+
+    private suspend fun refresh() {
+        getRocketListUseCase.invoke()
+            .onSuccess { rocketListData ->
+                setState { copy(rocketListState = BasicUiState.Success(rocketListData))}
+                setEffect { RocketListContract.Effect.ListRefreshed }
+            }
+            .onFailure { error ->
+                setEffect { RocketListContract.Effect.ListRefreshFailed }
             }
     }
 }

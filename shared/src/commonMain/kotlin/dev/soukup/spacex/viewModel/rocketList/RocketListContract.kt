@@ -10,6 +10,7 @@ interface RocketListContract {
 
     sealed interface Event: UiEvent {
         data object TryAgain: Event
+        data object Refresh: Event
     }
 
     data class State(
@@ -23,6 +24,7 @@ interface RocketListContract {
     }
 
     sealed interface Effect: UiEffect {
-
+        data object ListRefreshed: Effect
+        data object ListRefreshFailed: Effect
     }
 }
