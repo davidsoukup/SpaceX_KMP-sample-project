@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D022EF5D2EA7F88900B621E3 /* Toasts in Frameworks */ = {isa = PBXBuildFile; productRef = D022EF5C2EA7F88900B621E3 /* Toasts */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		71CDD9EB7FD9767B0877B6D1 /* Space X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D022EF5D2EA7F88900B621E3 /* Toasts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,7 @@
 			);
 			name = iosApp;
 			packageProductDependencies = (
+				D022EF5C2EA7F88900B621E3 /* Toasts */,
 			);
 			productName = iosApp;
 			productReference = 71CDD9EB7FD9767B0877B6D1 /* Space X.app */;
@@ -114,6 +120,9 @@
 			);
 			mainGroup = CBF018A4F0FC3423A1787DE5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D022EF5B2EA7F88800B621E3 /* XCRemoteSwiftPackageReference "swiftui-toasts" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EFFE2F7155D5A5E5E131D08B /* Products */;
 			projectDirPath = "";
@@ -368,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D022EF5B2EA7F88800B621E3 /* XCRemoteSwiftPackageReference "swiftui-toasts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sunghyun-k/swiftui-toasts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D022EF5C2EA7F88900B621E3 /* Toasts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D022EF5B2EA7F88800B621E3 /* XCRemoteSwiftPackageReference "swiftui-toasts" */;
+			productName = Toasts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6098AF16502FC3508F8705E7 /* Project object */;
 }

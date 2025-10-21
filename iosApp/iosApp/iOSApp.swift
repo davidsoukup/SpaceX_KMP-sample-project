@@ -1,5 +1,6 @@
 import Shared
 import SwiftUI
+import Toasts
 
 @main
 struct iOSApp: App {
@@ -10,6 +11,7 @@ struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .installToast(position: .bottom)
         }
     }
 }

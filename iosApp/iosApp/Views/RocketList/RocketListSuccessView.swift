@@ -7,10 +7,12 @@
 
 import SwiftUI
 import Shared
+import Toasts
 
 struct RocketListSuccessView: View {
     @EnvironmentObject private var viewModel: RocketListVM
-
+    @Environment(\.presentToast) var presentToast
+    
     var rockets: [RocketListModel]
     
     var body: some View {
@@ -26,9 +28,9 @@ struct RocketListSuccessView: View {
         .collect(flow: viewModel.effect) { effect in
             switch onEnum(of: effect) {
             case .listRefreshed:
-                print("refreshed")
+                presentToast(Toasts.RefreshSuccessfull)
             case .listRefreshFailed:
-                print("refresh fail")
+                presentToast(Toasts.RefreshFailed)
             }
         }
     }

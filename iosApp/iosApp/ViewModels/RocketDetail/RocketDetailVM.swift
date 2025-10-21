@@ -29,4 +29,8 @@ extension RocketDetailVM {
     func tryAgain() {
         self.setEvent(event: RocketDetailContractEventTryAgain())
     }
+    
+    func refresh() {
+        self.setEvent(event: RocketDetailContractEventRefresh())
+    }
 }
