@@ -13,11 +13,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import kotlin.contracts.Effect
 import kotlin.getValue
 
-abstract class BaseViewModel<Event : UiEvent, State : UiState>(
-    val priority: Boolean = false
-) : ViewModel(), KoinComponent {
+abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect>: ViewModel(), KoinComponent {
     private val ioDispatcher: CoroutineDispatcher by inject()
 
     private val initialState: State by lazy { createInitialState() }
@@ -31,6 +30,9 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState>(
 
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
     val event = _event.asSharedFlow()
+
+    private val _effect: MutableSharedFlow<Effect> = MutableSharedFlow()
+    val effect = _effect.asSharedFlow()
 
     init {
         subscribeEvents()
@@ -56,6 +58,13 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState>(
     protected fun setState(reduce: State.() -> State) {
         _uiState.update { currentState ->
             currentState.reduce()
+        }
+    }
+
+    protected fun setEffect(builder: () -> Effect) {
+        val effectValue = builder()
+        viewModelScope.launch {
+            _effect.emit(effectValue)
         }
     }
 
