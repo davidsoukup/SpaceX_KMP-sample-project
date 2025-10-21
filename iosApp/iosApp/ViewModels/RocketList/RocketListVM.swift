@@ -29,4 +29,8 @@ extension RocketListVM {
     func tryAgain() {
         self.setEvent(event: RocketListContractEventTryAgain())
     }
+    
+    func refresh() {
+        self.setEvent(event: RocketListContractEventRefresh())
+    }
 }

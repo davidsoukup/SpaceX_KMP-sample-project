@@ -9,6 +9,8 @@ import SwiftUI
 import Shared
 
 struct RocketListSuccessView: View {
+    @EnvironmentObject private var viewModel: RocketListVM
+
     var rockets: [RocketListModel]
     
     var body: some View {
@@ -18,6 +20,17 @@ struct RocketListSuccessView: View {
             }
         }
         .navigationTitle("Rockets")
+        .refreshable {
+            viewModel.refresh()
+        }
+        .collect(flow: viewModel.effect) { effect in
+            switch onEnum(of: effect) {
+            case .listRefreshed:
+                print("refreshed")
+            case .listRefreshFailed:
+                print("refresh fail")
+            }
+        }
     }
 }
 

@@ -12,7 +12,7 @@ struct RocketListView: View {
     @StateObject private var viewModel: RocketListVM = RocketListVM()
     
     var body: some View {
-        VStack {
+        Group {
             switch (viewModel.state.rocketListState) {
             case let success as BasicUiStateSuccess<NSArray>:
                 if let rocketList = success.data as? [RocketListModel] {
@@ -30,5 +30,6 @@ struct RocketListView: View {
             }
         }
         .navigationTitle("Rockets")
+        .environmentObject(viewModel)
     }
 }

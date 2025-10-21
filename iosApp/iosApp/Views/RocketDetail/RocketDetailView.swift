@@ -46,5 +46,6 @@ struct RocketDetailView: View {
                 }
             }
         }
+        .environmentObject(viewModel)
     }
 }
