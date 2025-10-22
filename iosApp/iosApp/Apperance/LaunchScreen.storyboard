@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rocket" translatesAutoresizingMaskIntoConstraints="NO" id="l35-qt-J5H">
-                                <rect key="frame" x="76" y="362" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_background" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-c2-UoS">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launscreen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="m0A-dF-mx3">
+                                <rect key="frame" x="86.666666666666686" y="316" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="dfm-0W-ih7"/>
+                                    <constraint firstAttribute="width" constant="220" id="ff3-Ld-n8S"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" name="AccentColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YZd-c2-UoS" secondAttribute="bottom" id="0B9-g4-xv7"/>
+                            <constraint firstItem="m0A-dF-mx3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OdX-PY-FB2"/>
+                            <constraint firstItem="m0A-dF-mx3" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SmQ-c0-0nD"/>
+                            <constraint firstItem="YZd-c2-UoS" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="V54-LI-Yb0"/>
+                            <constraint firstItem="YZd-c2-UoS" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="aSC-uN-Te1"/>
+                            <constraint firstItem="YZd-c2-UoS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="xzY-Ak-884"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -31,9 +44,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rocket" width="24" height="24"/>
-        <namedColor name="AccentColor">
-            <color red="0.68529296875000001" green="0.29571688574309879" blue="0.65026491151813404" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
+        <image name="launchscreen_background" width="920" height="2000"/>
+        <image name="launscreen_logo" width="1024" height="1024"/>
     </resources>
 </document>
