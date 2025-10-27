@@ -17,7 +17,6 @@ import kotlin.contracts.Effect
 import kotlin.getValue
 
 abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect>: ViewModel(), KoinComponent {
-    private val ioDispatcher: CoroutineDispatcher by inject()
 
     private val initialState: State by lazy { createInitialState() }
     abstract fun createInitialState(): State
@@ -49,9 +48,8 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect
     abstract suspend fun handleEvent(event: Event)
 
     fun setEvent(event: Event) {
-        val newEvent = event
         viewModelScope.launch {
-            _event.emit(newEvent)
+            _event.emit(event)
         }
     }
 
@@ -62,21 +60,8 @@ abstract class BaseViewModel<Event : UiEvent, State : UiState, Effect : UiEffect
     }
 
     protected fun setEffect(builder: () -> Effect) {
-        val effectValue = builder()
         viewModelScope.launch {
-            _effect.emit(effectValue)
-        }
-    }
-
-    protected fun <T> collect(
-        flow: Flow<T>, collect: (T) -> Unit
-    ) {
-        viewModelScope.launch {
-            flow
-                .flowOn(ioDispatcher)
-                .collect {
-                    collect(it)
-                }
+            _effect.emit(builder())
         }
     }
 }
